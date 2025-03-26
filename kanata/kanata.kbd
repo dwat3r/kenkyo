@@ -4,10 +4,10 @@
 )
 
 (defsrc
-  q w e r t y u i o p
-  a s d f g h j k l ;
-  z x c v b n m , . /
-         spc
+       q w e r t y u i o p
+  caps a s d f g h j k l ;
+       z x c v b n m , . /
+              spc
 )
 
 (defchordsv2
@@ -30,6 +30,7 @@
 )
 
 (deflayermap (main)
+  caps (multi lctl lmet lalt)
   a (t! charmod a lmet)
   s (t! charmod s lalt)
   d (t! charmod d lsft)
