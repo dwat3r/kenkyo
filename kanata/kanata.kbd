@@ -20,7 +20,7 @@
 (deftemplate charmod (char mod)
   (switch 
     ((key-timing 3 less-than 375)) $char break
-    () (tap-hold-release-timeout 200 500 $char $mod $char) break
+    () (tap-hold-release-timeout 200 300 $char $mod $char) break
   )
 )
 
@@ -109,6 +109,7 @@
   m pgup
   , pgdn
   . end
+  / lrld
 )
 
 (deflayermap (fumbol)
