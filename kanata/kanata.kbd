@@ -7,7 +7,7 @@
        q w e r t y u i o p
   caps a s d f g h j k l ;
        z x c v b n m , . /
-              spc
+  fn lctl lalt lmet            spc
 )
 
 (defchordsv2
@@ -29,22 +29,55 @@
   clear (multi (layer-switch main) (on-press release-virtualkey shift))
 )
 
+(platform (macos)
+  (defvirtualkeys
+    com.microsoft.VSCode nop0
+    org.alacritty nop0
+  )
+)
+
+(platform (macos) 
+  (defalias 
+    ctrl (switch
+      ((input virtual com.microsoft.VSCode)) lctl break
+      ((input virtual org.alacritty)) lctl break
+      () lmet break
+    )
+    meta (switch
+      ((input virtual com.microsoft.VSCode)) lmet break
+      ((input virtual org.alacritty)) lmet break
+      () lctl break
+    )
+  ) 
+)
+
+(platform (win)
+  (defalias 
+    ctrl lctl
+    meta lmet
+  )
+)
+
 (deflayermap (main)
   caps (multi lctl lmet lalt)
-  a (t! charmod a lmet)
+  fn @ctrl
+  lctl fn
+  lalt @meta
+  lmet lalt
+  a (t! charmod a @meta)
   s (t! charmod s lalt)
   d (t! charmod d lsft)
-  f (t! charmod f lctl)
-  j (t! charmod j rctl)
+  f (t! charmod f @ctrl)
+  j (t! charmod j @ctrl)
   k (t! charmod k rsft)
   l (t! charmod l lalt)
-  ; (t! charmod ; rmet)
-  z (t! charmod z lctl) 
+  ; (t! charmod ; @meta)
+  z (t! charmod z @ctrl) 
   x (t! charmod x ralt)
   v (t! charmod v (layer-while-held fumbol))
   m (t! charmod m (layer-while-held fumbol))
   . (t! charmod . ralt)
-  / (t! charmod / rctl)
+  / (t! charmod / @ctrl)
   spc (switch
     ((key-timing 1 less-than 200)) _ break 
     () (tap-hold-release-timeout 200 500 spc (multi (layer-switch extend) (on-release tap-virtualkey clear)) spc) break
@@ -55,29 +88,27 @@
   e (layer-switch fumbol)
   r (on-press press-virtualkey shift)
   y ins
-  u home
-  i up
-  o end
+  u bspc
+  i del
+  o enter
   p pgup
-  a lmet
+  a @meta
   s lalt
   d lsft
-  f lctl
+  f @ctrl
 ;;g comp ;; Enable if not MacOS.
-  h esc
-  j left
-  k down
+  h left
+  j down
+  k up
   l rght
-  ; pgdn
   z mute
   x vold
   c volu
   v pp
-  n tab
-  m bspc
-  , spc
-  . del
-  / ret
+  n home
+  m pgup
+  , pgdn
+  . end
 )
 
 (deflayermap (fumbol)
@@ -94,17 +125,17 @@
   [ f11
   ] f12
   \ f13
-  a (t! charmod 1 lmet)
+  a (t! charmod 1 @meta)
   s (t! charmod 2 lalt)
   d (t! charmod 3 lsft)
-  f (t! charmod 4 lctl)
+  f (t! charmod 4 @ctrl)
   g 5
   h 6
-  j (t! charmod 7 rctl)
+  j (t! charmod 7 @ctrl)
   k (t! charmod 8 rsft)
   l (t! charmod 9 lalt)
-  ; (t! charmod 0 rmet)
-  z (t! charmod lsgt lctl)
+  ; (t! charmod 0 @meta)
+  z (t! charmod lsgt @ctrl)
   x (t! charmod ` ralt)
   c -
   v =
@@ -113,5 +144,5 @@
   m '
   , [
   . (t! charmod ] ralt)
-  / (t! charmod \ lctl)
+  / (t! charmod \ @ctrl)
 )
