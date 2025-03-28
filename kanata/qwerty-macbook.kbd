@@ -20,6 +20,13 @@
 (deftemplate charmod (char mod)
   (switch 
     ((key-timing 3 less-than 375)) $char break
+    () (tap-hold-release-timeout 200 500 $char $mod $char) break
+  )
+)
+
+(deftemplate fastcharmod (char mod)
+  (switch 
+    ((key-timing 3 less-than 375)) $char break
     () (tap-hold-release-timeout 200 300 $char $mod $char) break
   )
 )
@@ -68,8 +75,8 @@
   s (t! charmod s lalt)
   d (t! charmod d lsft)
   f (t! charmod f @ctrl)
-  j (t! charmod j @ctrl)
-  k (t! charmod k rsft)
+  j (t! fastcharmod j @ctrl)
+  k (t! fastcharmod k rsft)
   l (t! charmod l lalt)
   ; (t! charmod ; @meta)
   z (t! charmod z @ctrl) 
