@@ -1,13 +1,13 @@
 (defcfg
-  process-unmapped-keys no
+  process-unmapped-keys yes
   concurrent-tap-hold yes
 )
 
 (defsrc
-       q w e r t y u i o p
-  caps a s d f g h j k l ;
-       z x c v b n m , . /
-  fn lctl lalt lmet            spc
+               q w e r t y u i o p
+ caps          a s d f g h j k l ;
+               z x c v b n m , . /
+  fn lctl lalt lmet  spc
 )
 
 (defchordsv2
