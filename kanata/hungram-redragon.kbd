@@ -24,13 +24,6 @@
   )
 )
 
-(deftemplate fastcharmod (char mod)
-  (switch 
-    ((key-timing 3 less-than 375)) $char break
-    () (tap-hold-release-timeout 200 300 $char $mod $char) break
-  )
-)
-
 (defvirtualkeys
   shift (multi (layer-switch main) lsft)
   clear (multi (layer-switch main) (on-press release-virtualkey shift))
@@ -73,15 +66,15 @@
 )
 
 (deflayermap (main)
-  caps (t! charmod esc (multi lctl lmet lalt))
+  caps (multi lctl lmet lalt)
   lctl @ctrl
   lmet @meta
   a (t! charmod a @meta)
   s (t! charmod s lalt)
   d (t! charmod d lsft)
   f (t! charmod f @ctrl)
-  j (t! fastcharmod j @ctrl)
-  k (t! fastcharmod k rsft)
+  j (t! charmod j @ctrl)
+  k (t! charmod k rsft)
   l (t! charmod l lalt)
   ; (t! charmod ; @meta)
   z (t! charmod z @ctrl) 

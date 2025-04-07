@@ -4,10 +4,11 @@
 )
 
 (defsrc
-               q w e r t y u i o p
- caps          a s d f g h j k l ;
-               z x c v b n m , . /
-  lctl lmet lalt  spc
+             ` 1 2 3 4 5 6 7 8 9 0 - = 
+ tab           q w e r t y u i o p [ ]
+ caps          a s d f g h j k l ; ' \
+          nubs z x c v b n m , . / 
+  fn lctl lalt lmet  spc
 )
 
 (defchordsv2
@@ -18,13 +19,6 @@
 )
 
 (deftemplate charmod (char mod)
-  (switch 
-    ((key-timing 3 less-than 375)) $char break
-    () (tap-hold-release-timeout 200 300 $char $mod $char) break
-  )
-)
-
-(deftemplate fastcharmod (char mod)
   (switch 
     ((key-timing 3 less-than 375)) $char break
     () (tap-hold-release-timeout 200 300 $char $mod $char) break
@@ -58,13 +52,6 @@
   ) 
 )
 
-(platform (macos) 
-  (defoverrides 
-    (nubs) (`)
-    (`) (nubs)
-  )
-)
-
 (platform (win)
   (defalias 
     ctrl lctl
@@ -74,16 +61,20 @@
 
 (deflayermap (main)
   caps (t! charmod esc (multi lctl lmet lalt))
-  lctl @ctrl
-  lmet @meta
+  fn @ctrl
+  lctl fn
+  lalt @meta
+  lmet lalt
+
   a (t! charmod a @meta)
   s (t! charmod s lalt)
   d (t! charmod d lsft)
   f (t! charmod f @ctrl)
-  j (t! fastcharmod j @ctrl)
-  k (t! fastcharmod k rsft)
+  j (t! charmod j @ctrl)
+  k (t! charmod k rsft)
   l (t! charmod l lalt)
   ; (t! charmod ; @meta)
+
   z (t! charmod z @ctrl) 
   x (t! charmod x ralt)
   v (t! charmod v (layer-while-held fumbol))
