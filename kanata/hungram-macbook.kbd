@@ -3,19 +3,48 @@
   concurrent-tap-hold yes
 )
 
+(deflocalkeys-macos
+  í 43
+  é 39
+  á 40
+  ű 41
+
+  ő 26
+  ú 27
+
+  ö 11
+  ü 12
+  ó 13
+
+  z 21
+  y 44
+  0 86
+  - 53
+)
+
 (defsrc
-             ` 1 2 3 4 5 6 7 8 9 0 - = 
- tab           q w e r t y u i o p [ ]
- caps          a s d f g h j k l ; ' \
-          nubs z x c v b n m , . / 
+             0 1 2 3 4 5 6 7 8 9 ö ü ó 
+ tab           q w e r t z u i o p ő ú
+ caps          a s d f g h j k l é á ű
+             í y x c v b n m , . - 
   fn lctl lalt lmet  spc
 )
+
+(deflayer main
+             ö í ő ó ú ; / + ü S-/ x S-1 `
+ tab           á z c y - ' m r h b w ű
+ @hypr         @i @o @e @a , . @t @s @n @l j XX
+             p é u d S-8 S-9 g v f k q
+  @ctrl fn   @meta lalt  @spc
+)
+
 
 (defchordsv2
   (w e) esc 50 all-released (extend)
   (i o) bspc 50 all-released (extend)
   (x c) tab 50 all-released (extend)
   (, .) ret 50 all-released (extend)
+  (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
 )
 
 (deftemplate charmod (char mod)
@@ -59,21 +88,20 @@
   )
 )
 
-(deflayermap (main)
-  caps (t! charmod esc (multi lctl lmet lalt))
+(defalias
+  hypr (t! charmod esc (multi lctl lmet lalt))
   fn @ctrl
   lctl fn
   lalt @meta
   lmet lalt
-
-  a (t! charmod a @meta)
-  s (t! charmod s lalt)
-  d (t! charmod d lsft)
-  f (t! charmod f @ctrl)
-  j (t! charmod j @ctrl)
-  k (t! charmod k rsft)
-  l (t! charmod l lalt)
-  ; (t! charmod ; @meta)
+  i (t! charmod i @meta)
+  o (t! charmod o lalt)
+  e (t! charmod e lsft)
+  a (t! charmod a @ctrl)
+  t (t! charmod t @ctrl)
+  s (t! charmod s rsft)
+  n (t! charmod n lalt)
+  l (t! charmod l @meta)
 
   z (t! charmod z @ctrl) 
   x (t! charmod x ralt)
@@ -86,6 +114,7 @@
     () (tap-hold-release-timeout 200 500 spc (multi (layer-switch extend) (on-release tap-virtualkey clear)) spc) break
   )
 )
+
 
 (deflayermap (extend)
   e (layer-switch fumbol)
