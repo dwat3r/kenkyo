@@ -67,7 +67,6 @@
   s lalt
   d lsft
   f @ctrl
-;;g comp ;; Enable if not MacOS.
   h left
   j down
   k up
@@ -82,7 +81,7 @@
   . end
   / lrld
 )
-
+  
 (deflayermap (fumbol)
   q f1
   w f2
@@ -118,3 +117,37 @@
   . (t! charmod ] ralt)
   / (t! charmod \ @ctrl)
 )
+
+(deflayermap (numpad)
+  u 1
+  i 2
+  o 3
+
+  j 4
+  k 5
+  l 6
+
+  n 7
+  m 8
+  , 9
+  . 0
+)
+
+(deflayermap (symbol)
+  q '
+  w S-'
+  e S-9
+  r S-0
+
+  a S-,
+  s S-.
+  d [
+  f ]
+
+  z S-5
+  x /
+  c S-[
+  v S-]
+)
+
+
