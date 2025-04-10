@@ -20,8 +20,6 @@
   s (t! charmod s lalt)
   d (t! charmod d lsft)
   f (t! charmod f @ctrl)
-  g (t! charmod g (layer-while-held numpad))
-  h (t! charmod h (layer-while-held symbol))
   j (t! fastcharmod j @ctrl)
   k (t! fastcharmod k rsft)
   l (t! charmod l lalt)

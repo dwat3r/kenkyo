@@ -1,8 +1,8 @@
 (defchordsv2
-  (w e) esc 50 all-released (extend)
-  (i o) bspc 50 all-released (extend)
-  (x c) tab 50 all-released (extend)
-  (, .) ret 50 all-released (extend)
+  (w e) bspc 50 all-released (extend)
+  (i o) ret 50 all-released (extend)
+  (x c) del 50 all-released (extend)
+  (, .) C-` 50 all-released (extend)
   (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
 )
 
@@ -118,36 +118,5 @@
   / (t! charmod \ @ctrl)
 )
 
-(deflayermap (numpad)
-  u 1
-  i 2
-  o 3
-
-  j 4
-  k 5
-  l 6
-
-  n 7
-  m 8
-  , 9
-  . 0
-)
-
-(deflayermap (symbol)
-  q '
-  w S-'
-  e S-9
-  r S-0
-
-  a S-,
-  s S-.
-  d [
-  f ]
-
-  z S-5
-  x /
-  c S-[
-  v S-]
-)
 
 
