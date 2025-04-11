@@ -62,19 +62,22 @@
   u bspc
   i del
   o enter
-  p pgup
+
   a @meta
   s lalt
   d lsft
   f @ctrl
+
   h left
   j down
   k up
   l rght
+
   z mute
   x vold
   c volu
   v pp
+
   n home
   m pgup
   , pgdn

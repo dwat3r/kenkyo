@@ -3,38 +3,22 @@
   concurrent-tap-hold yes
 )
 
-(deflocalkeys-macos
-  í 43
-  é 39
-  á 40
-  ű 41
-
-  ő 26
-  ú 27
-
-  ö 11
-  ü 12
-  ó 13
-
-  z 21
-  y 44
-  0 86
-  - 53
-)
 
 (defsrc
-             0 1 2 3 4 5 6 7 8 9 ö ü ó 
- tab           q w e r t z u i o p ő ú
- caps          a s d f g h j k l é á ű
-             í y x c v b n m , . - 
-  fn lctl lalt lmet  spc
+          ` 1 2 3 4 5 6 7 8 9 0 - =
+ tab        q w e r t y u i o p [ ]
+ caps       a s d f g h j k l ; ' \
+       nubs z x c v b n m , . /
+  fn lctl lmet lalt  spc
 )
 
+;; this layout works on mac, using the 
+;; hungarian system layout
 (deflayer main
-             ö í ő ó ú ; / + ü S-/ x S-1 `
- tab           á z c y - ' m r h b w ű
+        0 nubs [ = ] RA-. S-6 S-3 - S-, x S-4 RA-\
+ tab           ' y c z / S-1 m r h b w \
  @hypr         @i @o @e @a , . @t @s @n @l j XX
-             p é u d S-8 S-9 g v f k q
+             p ; u d S-8 S-9 g v f k q
   @ctrl fn   @meta lalt  @spc
 )
 
