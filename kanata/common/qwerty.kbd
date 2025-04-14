@@ -67,6 +67,15 @@
   )
 )
 
+(platform (win)
+  (defoverrides
+    (lctl lmet lalt h) (lmet left)
+    (lctl lmet lalt l) (lmet right)
+    (lctl lmet lalt k) (lmet up)
+  )
+
+)
+
 
 (deflayermap (extend)
   e @fw
