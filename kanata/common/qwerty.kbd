@@ -44,6 +44,17 @@
       ((input virtual org.alacritty)) lmet break
       () lctl break
     )
+    ;; move a word forward and back
+    fw (switch
+      ((input virtual com.microsoft.VSCode)) C-S-right break
+      ((input virtual org.alacritty)) C-right break
+      () A-S-right break
+    )
+    bw (switch
+      ((input virtual com.microsoft.VSCode)) C-S-left break
+      ((input virtual org.alacritty)) C-left break
+      () A-S-left break
+    )
   ) 
 )
 
@@ -51,12 +62,15 @@
   (defalias 
     ctrl lctl
     meta lmet
+    fw C-S-right
+    bw C-S-left
   )
 )
 
 
 (deflayermap (extend)
-  e (layer-switch fumbol)
+  e @fw
+  b @bw
   r (on-press press-virtualkey shift)
   y ins
   u bspc
