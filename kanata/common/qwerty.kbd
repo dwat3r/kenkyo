@@ -4,6 +4,7 @@
   (x c) del 50 all-released (extend)
   (, .) C-` 50 all-released (extend)
   (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
+  (esc bspc) lrld-next 50 all-released (extend)
 )
 
 (deftemplate charmod (char mod)
