@@ -56,6 +56,9 @@
       ((input virtual org.alacritty)) C-left break
       () A-S-left break
     )
+    cut M-x
+    copy M-c
+    paste M-v
   ) 
 )
 
@@ -65,6 +68,9 @@
     meta lmet
     fw C-S-right
     bw C-S-left
+    cut C-x
+    copy C-c
+    paste C-v
   )
 )
 
@@ -83,10 +89,10 @@
   b @bw
   r (on-press press-virtualkey shift)
   y ins
-  u bspc
-  i del
-  o enter
-
+  u @cut
+  i @copy
+  o @paste
+ 
   a @meta
   s lalt
   d lsft
