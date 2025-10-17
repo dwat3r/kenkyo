@@ -4,6 +4,7 @@
 )
 
 (defsrc
+  esc
                q w e r t y u i o p
  caps          a s d f g h j k l ;
                z x c v b n m , . /
@@ -11,6 +12,7 @@
 )
 
 (deflayermap (main)
+  esc (multi caps (layer-switch bitwig-keys))
   caps (t! charmod esc (multi lctl lmet lalt))
   fn @ctrl
   lctl fn

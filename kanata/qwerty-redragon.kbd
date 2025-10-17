@@ -4,6 +4,7 @@
 )
 
 (defsrc
+  esc
             q w e r t y u i o p
  caps       a s d f g h j k l ;
             z x c v b n m , . /
@@ -12,12 +13,13 @@
 
 (platform (macos) 
   (defoverrides 
-    ;; (nubs) (`)
+    (nubs) (`)
     (`) (nubs)
   )
 )
 
 (deflayermap (main)
+  esc (multi caps (layer-switch bitwig))
   caps (t! charmod esc (multi lctl lmet lalt))
   lctl @ctrl
   lmet @meta
