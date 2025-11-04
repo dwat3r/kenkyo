@@ -5,6 +5,11 @@
   (, .) C-` 50 all-released (extend)
   (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
   (esc bspc) lrld-next 50 all-released (extend)
+  (; ' \) caps 50 all-released (extend)
+  (, . /) (switch
+    ((layer plain)) (layer-switch main) break
+    ((layer main)) (layer-switch plain) break
+  ) 50 all-released (extend)
 )
 
 (deftemplate charmod (char mod)
@@ -149,23 +154,4 @@
   , [
   . (t! charmod ] ralt)
   / (t! charmod \ @ctrl)
-)
-
-
-(deflayermap (bitwig)
-  esc (multi caps (layer-switch main))
-  a a
-  s s
-  d d
-  f f
-  j j
-  k k
-  l l
-  ; ;
-  z z
-  x x
-  v v
-  m m
-  . .
-  / /
 )

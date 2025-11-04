@@ -19,7 +19,6 @@
 )
 
 (deflayermap (main)
-  esc (multi caps (layer-switch bitwig))
   caps (t! charmod esc (multi lctl lmet lalt))
   lctl @ctrl
   lmet @meta
@@ -41,6 +40,14 @@
     ((key-timing 1 less-than 200)) _ break 
     () (tap-hold-release-timeout 200 500 spc (multi (layer-switch extend) (on-release tap-virtualkey clear)) spc) break
   )
+)
+
+(deflayer (plain)
+  esc
+            q w e r t y u i o p
+  caps      a s d f g h j k l ;
+            z x c v b n m , . /
+  @ctrl @meta lalt  spc
 )
 
 (include common/qwerty.kbd)
