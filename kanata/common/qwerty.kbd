@@ -121,37 +121,34 @@
 )
   
 (deflayermap (fumbol)
-  q f1
-  w f2
-  e f3
-  r f4
-  t f5
-  y f6
-  u f7
-  i f8
-  o f9
-  p f10
-  [ f11
-  ] f12
-  \ f13
-  a (t! charmod 1 @meta)
-  s (t! charmod 2 lalt)
-  d (t! charmod 3 lsft)
-  f (t! charmod 4 @ctrl)
-  g 5
-  h 6
-  j (t! charmod 7 @ctrl)
-  k (t! charmod 8 rsft)
-  l (t! charmod 9 lalt)
-  ; (t! charmod 0 @meta)
-  z (t! charmod lsgt @ctrl)
-  x (t! charmod ` ralt)
-  c -
-  v =
-  b f11
-  n f12
-  m '
-  , [
-  . (t! charmod ] ralt)
-  / (t! charmod \ @ctrl)
+  q \ 
+  w S-\
+  e /
+  r S-4
+  t S-2
+  y S-;
+  u S-1
+  i S-/
+  o S-7
+  p S-5
+  a (t! charmod - @meta)
+  s (t! charmod = lalt)
+  d (t! charmod ` lsft)
+  f (t! charmod ' @ctrl)
+  g S-'
+  h S-9
+  j (t! charmod S-[ @ctrl)
+  k (t! charmod S-] rsft)
+  l (t! charmod S-0 lalt)
+  ; (t! charmod ; @meta)
+  z S-=
+  x S-`
+  c S-3
+  v S--
+  b S-8
+  n S-,
+  m [
+  , ]
+  . S-.
 )
+
