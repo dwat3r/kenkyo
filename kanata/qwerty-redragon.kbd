@@ -30,12 +30,9 @@
   k (t! fastcharmod k rsft)
   l (t! charmod l lalt)
   ; (t! charmod ; @meta)
-  z (t! charmod z @ctrl) 
-  x (t! charmod x ralt)
+  c (t! charmod c (layer-while-held number))
   v (t! charmod v (layer-while-held fumbol))
   m (t! charmod m (layer-while-held fumbol))
-  . (t! charmod . ralt)
-  / (t! charmod / @ctrl)
   spc (switch
     ((key-timing 1 less-than 200)) _ break 
     () (tap-hold-release-timeout 200 500 spc (multi (layer-switch extend) (on-release tap-virtualkey clear)) spc) break
@@ -51,3 +48,4 @@
 )
 
 (include common/qwerty.kbd)
+
