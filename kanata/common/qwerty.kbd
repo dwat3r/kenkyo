@@ -2,8 +2,12 @@
   (w e) bspc 50 all-released (extend)
   (i o) ret 50 all-released (extend)
   (x c) del 50 all-released (extend)
-  (, .) C-` 50 all-released (extend)
-  (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
+  (, .) (switch
+    ((layer extend)) (layer-switch main) break
+    ((layer main)) (layer-switch extend) break
+  ) 50 all-released ()
+
+;;  (a s) (multi lctl lmet lalt lsft) 50 all-released (extend)
   (esc bspc) lrld-next 50 all-released (extend)
   (; ' \) caps 50 all-released (extend)
   (, . /) (switch
@@ -93,10 +97,11 @@
   e @fw
   b @bw
   r (on-press press-virtualkey shift)
-  y ins
-  u @cut
-  i @copy
-  o @paste
+  
+  y home 
+  u pgdn 
+  i pgup 
+  o end 
  
   a @meta
   s lalt
@@ -113,10 +118,6 @@
   c volu
   v pp
 
-  n home
-  m pgdn
-  , pgup
-  . end
   / lrld
 )
   
