@@ -8,6 +8,14 @@
 
   lctl lmet lalt  rctl rmet 
 )
+
+(platform (macos) 
+  (defoverrides 
+    (nubs) (`)
+    (`) (nubs)
+  )
+)
+
 (deflayermap main
 
   lctl @ctrl
