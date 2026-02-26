@@ -1,0 +1,43 @@
+
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes
+)
+
+(defsrc
+
+  lctl lmet lalt  rctl rmet 
+)
+(deflayermap main
+
+  lctl @ctrl
+  lmet @meta
+  rctl @ctrl
+  rmet @meta
+)
+
+(platform (macos)
+  (defvirtualkeys
+    com.microsoft.VSCode nop0
+    org.alacritty nop0
+  )
+)
+
+(platform (macos) 
+  (defalias 
+    ctrl (switch
+      ((input virtual com.microsoft.VSCode)) lctl break
+      ((input virtual org.alacritty)) lctl break
+      () lmet break
+    )
+    meta (switch
+      ((input virtual com.microsoft.VSCode)) lmet break
+      ((input virtual org.alacritty)) lmet break
+      () lctl break
+    )
+  ) 
+)
+
+(defchordsv2
+  (esc bspc) lrld-next 50 all-released ()
+)

@@ -1,5 +1,5 @@
 (defchordsv2
-  (w e) bspc 50 all-released (extend)
+  ;;(w e) bspc 50 all-released (extend)
   (i o) ret 50 all-released (extend)
   (x c) del 50 all-released (extend)
   (, .) (switch
