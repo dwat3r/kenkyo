@@ -134,23 +134,21 @@
   p S-5
   a (t! charmod - @meta)
   s (t! charmod = lalt)
-  d (t! charmod ` lsft)
-  f (t! charmod ' @ctrl)
-  g S-'
+  d (t! charmod S-= lsft)
+  f (t! charmod S-, @ctrl)
+  g S-. 
   h S-9
-  j (t! charmod S-[ @ctrl)
-  k (t! charmod S-] rsft)
-  l (t! charmod S-0 lalt)
+  j (t! charmod S-0 @ctrl)
+  k (t! charmod S-[ rsft)
+  l (t! charmod S-] lalt)
   ; (t! charmod ; @meta)
-  z S-=
+  z `
   x S-`
   c S-3
   v S--
   b S-8
-  n S-,
-  m [
-  , ]
-  . S-.
+  n [
+  m ]
 )
 
 (deflayermap (number)
