@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>dev.kanata.kanata</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>-c</string>
+        <string>echo $$ > /var/run/kanata.pid; exec /opt/homebrew/bin/kanata -p 5829 -c /etc/kanata/sofle.kbd -c /etc/kanata/qwerty-macbook.kbd > >(awk '$0=="virtual_hid_keyboard_ready true"{next} $0!=p{print;fflush();p=$0}') 2>&amp;1</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/var/log/kanata.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/kanata.log</string>
+</dict>
+</plist>
